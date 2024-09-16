@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco do BOLSOMITOOOOO</title> 
+   
+    <script>
+        function nome(){
+        var usuário=prompt("Qual o seu nome?");
+        alert("Olá  "   + usuário  +  " . " + "Seja muito bem vindo á nossa home");
+    }
+    nome();
+
+    function Inicío(){
+let itens=prompt("Escolha uma das opções abaixo:\n1) Inicio \n2) Extrato\n3) Saldo \n4) Depositar \n5) Saque \n6) Sair");
+
+switch(itens){
+case "1":
+    alert("Você está na página de Inicio");
+break;
+
+case "2":
+    alert("Você está na página do Extrato");
+    var extrato=alert(" Extrato das relações deste mês:  Total: R$1.000,00\n \nGastos: Mercado:R$250,00" )
+    break;
+
+    case "3":
+        alert("Você está na página do Saldo.");
+        var saldo=prompt("Mostrar Saldo ? Sim/Não.").toLowerCase();
+        if(saldo ==="sim"){
+            let saldoatual=1000;
+            alert("Seu saldo é de  "  +  "R$" +saldoatual);
+        }else{
+            alert("Não iremos mostrar seu Saldo.")
+        }
+         break;
+
+        case "4":
+            alert("Você está na página de Depósito");
+            break;
+
+            case "5":
+            alert("Você está na página de Saque");
+                  var saque=parseFloat(prompt("Quanto você deseja sacar?"));
+                  if (isNaN(saque)) {
+                    alert("Por favor, digite um valor numérico válido.");
+                } else if(saque>=saldo){
+                    alert("Operação não autorizada. Saldo insuficiente");
+                  }else if(saque<=0){
+                    alert("Por favor digite um valor maior que zero");
+                  }else{
+                    alert("Operação autorizada.Você sacou R$"+saque);
+        
+                  }
+                break;
+
+                case "6":
+                    alert("Você escolheu Sair")
+                    break;
+
+                    default:
+                        alert("Opção Inválida.Por favor tente outra opção.");
+                        break;
+}
+    }
+Inicío();
+
+    </script>
+</head>
+<body>
+ 
+    
+</body>
+</html>
