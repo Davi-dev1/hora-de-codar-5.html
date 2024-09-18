@@ -9,19 +9,26 @@
         function nome(){
            
         var usuário=prompt("Qual o seu nome?");
-        alert("Olá  "   + usuário  +  " . " + "Seja muito bem vindo á nossa home");
+        alert("Olá  "   + usuário  +  " , " + "Seja muito bem vindo á nossa home :)");
     }
     nome();
 
     function Inicío(){
      var saldo=1000;
-let itens=prompt("Escolha uma das opções abaixo:\n2) Extrato\n3) Saldo \n4)Transferência \n5) Saque \n6) Sair");
+let itens=prompt("Escolha uma das opções abaixo:\n1) Saldo\n2)Extrato \n3)Saque \n4) Depósito \n5) Transferência \n6 Sair");
 
 switch(itens){
 case "1":
-    alert("Você está na página de Inicio");
-break;
+alert("Você está na página do Saldo.");
+        var saldo=prompt("Mostrar Saldo ? Sim/Não.");
+        if(saldo ==="sim"){
+            var saldoatual=(1000);
+            alert("Seu saldo é de  "  +  "R$" +saldoatual);
+        }else{
 
+        alert("Não iremos mostrar seu Saldo.")
+        }
+         break;
 case "2":
     alert("Você está na página do Extrato");
     var extrato=alert(" EXTRATO DE CONTAS - MÊS 09 DE 2024\n \nTOTAL DO SALÁRIO LIQUIDO:R$1.0000");
@@ -29,36 +36,7 @@ case "2":
     break;
 
     case "3":
-        alert("Você está na página do Saldo.");
-        var saldo=prompt("Mostrar Saldo ? Sim/Não.").toLowerCase();
-        if(saldo ==="sim"){
-            var saldoatual=(1000);
-            alert("Seu saldo é de  "  +  "R$" +saldoatual);
-        }else{
-            alert("Não iremos mostrar seu Saldo.")
-        }
-         break;
-
-        case "4":
-        alert("Você está na página de Transferência.")
-        var conta = parseInt(prompt("Informe o número da conta aqui:"));
-    if (isNaN(conta) ) {
-        alert("Por favor, insira um número de conta válido.");
-    }
-            
-    var valorTransferencia = Number(prompt("Qual o valor da transferência?"));
-    if (isNaN(valorTransferencia) ) {
-        alert("Por favor, insira um valor de transferência válido.");
-       
-    } else if(valorTransferencia>saldoatual){
-        alert("Operação não autorizada!!!!!!!!");
-        }
-  alert ("Transferência de R$ " + valorTransferencia.toFixed() + " para a conta número " + conta + " foi realizada com sucesso.");
-
-            break;
-
-            case "5":
-            alert("Você está na página de Saque");
+        alert("Você está na página de Saque");
                   var saque=parseFloat(prompt("Quanto você deseja sacar?"));
                   if (isNaN(saque)) {
                     alert("Por favor, digite um valor numérico válido.");
@@ -70,6 +48,38 @@ case "2":
                     alert("Operação autorizada.Você sacou R$"+saque);
         
                   }
+                break;
+
+        case "4":
+        alert("Você está na página de Depósito");
+    var total=1000;
+}if (total<=0){
+        alert("Operação não autorizada valor deve ser maior que zero.");
+       
+       break;
+            case "5":
+            alert("Você está na página de Transferência.")
+        var conta = parseInt(prompt("Informe o número da conta aqui:"));
+        var  saldoatual=(1000);
+    if (isNaN(conta) ) {
+        alert("Por favor, insira um número de conta válido.");
+    }
+            
+    var valorTransferencia = Number(prompt("Qual o valor da transferência?"));
+    if (isNaN(valorTransferencia) ) {
+        alert("Por favor, insira um valor de transferência válido.");
+       
+    } else if(valorTransferencia>saldoatual){
+        alert("Operação não autorizada! . Valor inserido é maior que o seu saldo ");
+        
+  alert ("Transferência de R$ " + valorTransferencia.toFixed(2) + " para a conta número : " + conta + " foi realizada com sucesso.");
+}if (valorTransferencia<=0){
+        alert("Operação não autorizada valor deve ser maior que zero.");
+       }
+            break;
+
+        
+                  
                 break;
 
                 case "6":
